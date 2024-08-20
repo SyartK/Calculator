@@ -32,7 +32,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-let history = [];
+let calcHistory = [];
 const maxHistoryEntries = 10;
 
 function appendToDisplay(value) {
@@ -55,28 +55,28 @@ function removeLastCharacter() {
 
 function calculate() {
     const display = document.getElementById('display');
-    const history = document.getElementById('history');
     try {
-        const result = eval(display.value); 
-        history.innerHTML += `<div>${display.value} = ${result}</div>`; 
-        display.value = result; 
+        const result = eval(display.value);
+        addToHistory(`${display.value} = ${result}`);
+        display.value = result;
     } catch (e) {
         display.value = 'Error';
+    }
 }
+
 function addToHistory(entry) {
     const historyDiv = document.getElementById('history');
     
-    history.push(entry);
+    calcHistory.push(entry);
     
-    if (history.length > maxHistoryEntries) {
-        history.shift();
+    if (calcHistory.length > maxHistoryEntries) {
+        calcHistory.shift();
     }
     
-    historyDiv.innerHTML = history.join('<br>');
+    historyDiv.innerHTML = calcHistory.join('<br>');
 }
 
 function clearHistory() {
-    history = []; 
-    document.getElementById('history').innerHTML = ''; 
- }
+    calcHistory = [];
+    document.getElementById('history').innerHTML = '';
 }
