@@ -76,7 +76,7 @@ function addToHistory(entry) {
 }
 
 function clearHistory() {
-    history = []; 22
+    history = []; 
     document.getElementById('history').innerHTML = ''; 
  }
 }
