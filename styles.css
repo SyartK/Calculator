@@ -3,16 +3,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #2c2c2c;
     margin: 0;
+    background-color: #2c2c2c;
     font-family: 'Arial', sans-serif;
 }
 
 .container {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .calculator {
@@ -20,7 +21,7 @@ body {
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     background-color: #1e1e1e;
-    width: 320px; 
+    width: 320px;
 }
 
 #display {
@@ -75,22 +76,39 @@ button[onclick="removeLastCharacter()"]:hover {
 }
 
 .history {
-    width: 300px;
+    width: 320px;
     background-color: #222;
     color: #d69200;
     padding: 10px;
     overflow-y: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    height: 410px; 
+    height: 410px;
     display: flex;
     flex-direction: column;
 }
 
 .history button {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }    
 
 .history h3 {
     margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 360px) {
+    .calculator, .history {
+        width: 100%;
+    }
+
+    #display {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 15px;
+        font-size: 1.2em;
+    }
 }
