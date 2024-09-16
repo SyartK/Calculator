@@ -12,103 +12,78 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
     flex-wrap: wrap;
 }
 
 .calculator {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
     background-color: #1e1e1e;
     width: 320px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #444;
 }
 
 #display {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     font-size: 2.2em;
     text-align: right;
-    border: none;
     background-color: #333;
     color: #d69200;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
     box-sizing: border-box;
-    border-bottom: 1px solid #444;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
+    gap: 10px; /* Space between buttons */
+    margin-top: 15px;
 }
 
 .btn {
-    padding: 20px;
-    font-size: 1.5em;
-    border: none;
+    padding: 15px;
+    font-size: 1.4em;
     background-color: #2e2e2e;
-    color: #b97900;
-    transition: background-color 0.2s, transform 0.1s;
-    cursor: pointer;
+    color: #ff9800;
     border-radius: 5px;
-}
-
-.btn:active {
-    background-color: #444;
-    transform: scale(0.98);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #3a3a3a;
+    background-color: #444;
 }
 
 .zero {
-    grid-column: span 3;
-}
-
-button[onclick="removeLastCharacter()"] {
-    background-color: #333;
-}
-
-button[onclick="removeLastCharacter()"]:hover {
-    background-color: #3a3a3a;
+    grid-column: span 2;
 }
 
 .history {
-    width: 320px;
+    width: 100%;
     background-color: #222;
     color: #d69200;
     padding: 10px;
     overflow-y: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    height: 410px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 5px;
+    margin-top: 15px;
 }
 
-.history button {
-    margin-bottom: 10px;
-}    
 
-.history h3 {
-    margin: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 360px) {
-    .calculator, .history {
-        width: 100%;
+@media (max-width: 600px) {
+    .calculator {
+        width: 95%;
     }
 
     #display {
         font-size: 1.8em;
-        padding: 15px;
+        padding: 10px;
     }
 
     .btn {
-        padding: 15px;
+        padding: 12px;
         font-size: 1.2em;
     }
 }
